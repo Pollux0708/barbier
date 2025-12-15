@@ -1,0 +1,745 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background-color: #f8f5ef; /* fond beige clair élégant */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- MENU HAMBURGER --- */
+/* --- MENU HAMBURGER MODERNE --- */
+.menu-toggle {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+/* Animation du bouton en croix quand actif */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  width: 220px;
+  background: rgba(0, 0, 0, 0.85);
+  transition: left 0.4s ease;
+  z-index: 1000;
+  padding-top: 80px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #d4af37;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+/* --- HERO / VIDEO --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.logo {
+  position: absolute;
+  top: 40px; /* espace depuis le haut */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.logo img {
+  width: 300px; /* ajuste la taille selon ton logo */
+  height: auto;
+  opacity: 0.95; /* léger effet de fondu pour l’intégrer à la vidéo */
+}
+.logo p {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Poppins', serif;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: 'Alfa Slab One', cursive; /* style western */
+}
+
+/* --- CONTENU --- */
+.section {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+.section.dark {
+  background-color: transparent;
+  color: #111;
+}
+
+section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #111;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+.content-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.content-grid img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* --- CONTACT --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  background: #f8f8f3;
+  color: #111;
+}
+
+.contact-form button {
+  background-color: #d4af37;
+  color: #111;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #b8962d;
+}
+/* --- CARDS --- */
+.card {
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* --- ANIMATIONS AU SCROLL --- */
+.fade-in {
+  position: relative;
+  z-index: 2; /* obligatoire si tu as des pseudo-éléments de fond comme .team-intro::before */
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in {
+  position: relative;
+  z-index: 2; /* obligatoire si tu as des pseudo-éléments de fond comme .team-intro::before */
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* --- ANIMATION DES TITRES --- */
+.fade-title {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+s
+
+.team-intro {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  padding: 60px 40px;
+  text-align: center;
+  line-height: 1.6;
+  color: #222;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Image de fond floutée avec effet de zoom lent */
+.team-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/salon.jpg") center/cover no-repeat;
+  filter: blur(8px);
+  opacity: 0.25;
+  z-index: 0;
+  transform: scale(1);
+  animation: zoomBackground 20s ease-in-out infinite alternate;
+}
+
+/* Animation lente et fluide */
+@keyframes zoomBackground {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+
+
+/* Le contenu du texte passe par-dessus */
+.team-intro * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Titre de la section */
+.team-intro h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+/* Forcer les éléments à être visibles au-dessus du fond flouté */
+.fade-in {
+  position: relative;
+  z-index: 2; /* au-dessus du fond flouté */
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+h1, h2, h3, h4 {
+  color: #333;
+}
+/* --- Section présentation --- */
+.presentation {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  z-index: 5; /* au-dessus de la vidéo */
+  background-color: transparent;
+}
+
+.presentation-card {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.presentation-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/ambiance.jpg'); /* ton image floutée */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.presentation-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4); /* effet "verre fumé" */
+  border-radius: 20px;
+  text-align: center;
+}
+
+.presentation-content h2 {
+  font-family: 'Marcellus', serif;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.presentation-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ==== CLEANUP & STACKING FIXES ==== */
+
+/* enlever tout caractère isolé dans le CSS (vérifie avant) */
+
+/* unifiée : fade-in */
+.fade-in {
+  position: relative;
+  z-index: 6; /* suffisamment haut pour passer au-dessus des pseudo-éléments floutés */
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* fade-title (titres de section) */
+.fade-title {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STACKING : s'assurer que la vidéo reste derrière et le contenu devant */
+.hero {
+  position: relative;
+  z-index: 1;
+}
+.hero-video {
+  z-index: -2;
+}
+
+/* presentation card : large, image floutée en fond, contenu lisible */
+.presentation {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: transparent;
+  position: relative;
+  z-index: 3; /* devant la vidéo */
+}
+
+.presentation-card {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+  min-height: 220px;
+  background: rgba(255,255,255,0.02); /* très léger */
+}
+
+/* image floutée en fond du card */
+.presentation-image {
+  position: absolute;
+  inset: 0;
+  background: center/cover no-repeat url('images/ambiance.jpg');
+  filter: blur(8px);
+  opacity: 0.35;
+  transform-origin: center;
+  z-index: 0;
+}
+
+/* léger zoom sur le fond (optionnel) */
+@keyframes presentationZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+.presentation-image {
+  animation: presentationZoom 18s ease-in-out infinite alternate;
+}
+
+/* contenu texte sur le card */
+.presentation-content {
+  position: relative;
+  z-index: 2;
+  padding: 36px;
+  background: rgba(0,0,0,0.42); /* verre fumé : contraste texte */
+  color: #fff;
+  margin: 18px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* si tu veux texte sombre sur fond beige, change background & color */
+.presentation-content.light {
+  background: rgba(255,255,255,0.9);
+  color: #222;
+}
+
+.presentation-content h3 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  letter-spacing: 0.6px;
+}
+
+/* s'assurer que main et sections sont au-dessus de la video */
+main { position: relative; z-index: 3; }
+
+/* petites règles de sécurité pour les cards générales */
+.card { z-index: 5; }
+
+/* --- Présentation : card large harmonisée --- */
+#equipe .presentation-card {
+  background: #f8f5ef; /* ton beige élégant */
+  box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+#equipe .presentation-content {
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+#equipe .presentation-content h3 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #111;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#equipe .presentation-image {
+  opacity: 0.25;
+  filter: blur(8px);
+}
+
+/* === FIX FINAL : Présentation visible dans #equipe === */
+#equipe .presentation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: transparent;
+  z-index: 5; /* au-dessus de la vidéo */
+}
+
+#equipe .presentation-card {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.9);
+}
+
+#equipe .presentation-image {
+  position: absolute;
+  inset: 0;
+  background: url('images/salon.jpg') center/cover no-repeat;
+  filter: blur(8px);
+  opacity: 0.25;
+  z-index: 1;
+}
+
+#equipe .presentation-content {
+  position: relative;
+  z-index: 2;
+  color: #111;
+  padding: 60px;
+  text-align: center;
+}
+
+#equipe .presentation-content h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+#equipe .presentation-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+/* === Bloc présentation Zot Barber (version claire et lisible) === */
+#equipe .presentation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: transparent;
+  z-index: 5;
+}
+
+#equipe .presentation-card {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+  background: rgba(255,255,245,0.9); /* beige clair légèrement transparent */
+}
+
+#equipe .presentation-image {
+  position: absolute;
+  inset: 0;
+  background: url("images/salon.jpg") center/cover no-repeat;
+  filter: blur(8px);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+#equipe .presentation-content {
+  position: relative;
+  z-index: 2;
+  color: #222;
+  padding: 60px;
+  text-align: center;
+}
+
+#equipe .presentation-content h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+#equipe .presentation-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+#equipe .presentation-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/salon.jpg"); /* Vérifie le nom exact */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  opacity: 0.35;
+  z-index: 1;
+  transition: transform 15s ease-in-out;
+  transform: scale(1);
+  animation: zoomBackground 20s ease-in-out infinite alternate;
+}
+/* ===== FOOTER ===== */
+#footer {
+  background: #111; /* noir profond */
+  color: #d4af37; /* doré subtil, tu peux remplacer par #f1f1f1 pour un texte blanc */
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#footer p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  font-family: "Playfair Display", serif; /* police élégante */
+  letter-spacing: 0.5px;
+}
+
+.footer-socials {
+  margin-top: 15px;
+}
+
+.social-link {
+  color: #d4af37;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #f5e1a4;
+  transform: scale(1.2);
+}
+
+/* ==== DIGIPOL LOGO DANS LE FOOTER ==== */
+.footer-credit {
+  margin-top: 12px;
+  display: inline-block; /* permet un fond propre autour du logo si besoin */
+  line-height: 0; /* supprimer l'espace de ligne autour de l'image */
+}
+.footer-credit img,
+.footer-digilogo {
+  max-height: 80px; /* hauteur par défaut */
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+ 
+  padding: 0; /* aucun espace : fond = taille de l'image */
+  border-radius: 6px; /* arrondi visuel sans changer la taille */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border: none; /* retirer la bordure pour ne pas augmenter la taille */
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  cursor: pointer;
+}
+
+.footer-credit img:hover,
+.footer-digilogo:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.20);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.08));
+}
+
+@media (max-width: 700px) {
+  .footer-digilogo,
+  .footer-credit img {
+    max-height: 32px; /* plus petit sur mobile */
+    padding: 0; /* garder aucun espace sur mobile aussi */
+    border-radius: 6px;
+  }
+  .footer-content {
+    padding: 0 16px;
+  }
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}

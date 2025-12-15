@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbershop</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+
+ <!-- Menu hamburger -->
+<div class="menu-toggle" id="menu-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#prestations">Nos prestations</a></li>
+      <li><a href="#equipe">Notre équipe</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact & Réservation</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section vidéo -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="images/barber.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <div class="logo">
+  <img src="images/logo-zot.png" alt="Logo Zot Barber">
+  <p>Style, tradition & caractère</p>
+</div>
+
+
+  </section>
+
+  <!-- Contenu principal -->
+  <main>
+    <section id="prestations" class="section">
+  <h2>Nos prestations</h2>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card fade-in">
+      <img src="images/galerie 1.jpg" alt="Coupe classique">
+      <div class="card-content">
+        <h3>Coupe classique</h3>
+        <p>Précision, élégance et confort – adaptée à votre style.<br><strong>25€</strong></p>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+      <div class="card fade-in">
+      <img src="images/galerie 6.jpg" alt="Rasage traditionnel">
+      <div class="card-content">
+        <h3>Rasage traditionnel</h3>
+        <p>Serviette chaude et rasoir droit pour une expérience authentique.<br><strong>20€</strong></p>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+      <div class="card fade-in">
+      <img src="images/galerie 4.jpg" alt="Taille de barbe">
+      <div class="card-content">
+        <h3>Taille de barbe</h3>
+        <p>Une barbe structurée et soignée selon vos envies.<br><strong>15€</strong></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+    <section id="equipe" class="section">
+  <div class="presentation">
+    <div class="presentation-card">
+      <div class="presentation-image"></div>
+      <div class="presentation-content">
+        <h3>À propos de Zot Barber</h3>
+        <p>
+          Depuis 7 ans, <strong>Zot Barber</strong> s’est imposé comme une adresse incontournable à 
+          <strong>Saint-Gilles-les-Hauts</strong>.
+        </p>
+        <p>
+          Entre tradition et modernité, notre équipe de barbiers passionnés met son savoir-faire au service de votre style.
+        </p>
+        <p>
+          Ici, chaque coupe, chaque taille de barbe est pensée sur mesure, dans une ambiance conviviale et authentique.
+        </p>
+        <p>
+          Venez profiter d’un moment de détente, d’un soin précis et de l’esprit “old school” qui fait notre réputation.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Notre équipe</h2>
+  <div class="content-grid">
+    <div class="card">
+      <img src="images/un homme barbier 2.jpg" alt="Jules">
+      <div class="card-content">
+        <h3>Jules</h3>
+        <p>Spécialiste coupe classique et coiffures modernes. 10 ans d’expérience.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/barber 1.jpg" alt="Mika">
+      <div class="card-content">
+        <h3>Mika</h3>
+        <p>Expert rasage traditionnel. Formé à la technique du rasoir droit.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/un homme barbier 3.jpg" alt="Téo">
+      <div class="card-content">
+        <h3>Téo</h3>
+        <p>Passionné de barbe et soins du visage. Finition parfaite garantie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="galerie" class="section">
+  <h2>Galerie</h2>
+  <div class="content-grid">
+    <div class="card"><img src="images/galerie 2.jpg" alt="Galerie 1"></div>
+    <div class="card"><img src="images/galerie 3.jpg" alt="Galerie 2"></div>
+    <div class="card"><img src="images/galerie 5.jpg" alt="Galerie 3"></div>
+    <div class="card"><img src="images/galerie 7.jpg" alt="Galerie 4"></div>
+  </div>
+</section>
+
+
+    <section id="contact" class="section dark">
+      <h2>Contact & Réservation</h2>
+      <form class="contact-form">
+  <input type="text" placeholder="Votre nom" required>
+  <input type="tel" placeholder="Téléphone" required>
+  <input type="email" placeholder="Email" required>
+  <select required>
+    <option value="">Choisissez une prestation</option>
+    <option>Coupe classique - 25€</option>
+    <option>Rasage traditionnel - 20€</option>
+    <option>Taille de barbe - 15€</option>
+  </select>
+  <input type="date" required>
+  <input type="time" required>
+  <textarea placeholder="Informations complémentaires..."></textarea>
+  <button type="submit">Prendre rendez-vous</button>
+</form>
+
+    </section>
+  </main>
+<footer id="footer">
+  <div class="footer-content">
+    <p nos hoaraires class="footer-horaires">🕒 Horaires d'ouverture : lundi - Mardi - mercredi - jeudi -vendredi - Samedi : 9h - 19h</p>
+    <p class="footer-adresse">🏍 12 rue des Barbiers, Saint-Gilles-les-Bains</p>
+    <p class="footer-tel">☎ 0692 12 34 56</p>
+
+    <div class="footer-socials">
+      <a href="https://www.facebook.com" target="_blank" class="social-link">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="social-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/262692123456" target="_blank" class="social-link">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <p>© 2025 Zot Barber – Site conçu par
+      <img src="images/aptoi entier transparent.png" alt="aptoi" class="footer-digilogo"></p>
+
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script>
+  // Animation fade-in avec effet "stagger"
+  const cards = document.querySelectorAll('.card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 120); // décalage de 120ms entre chaque carte
+      }
+    });
+  }, { threshold: 0.2 });
+
+ 
+
+const titleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+titles.forEach(title => {
+  title.classList.add('fade-title');
+  titleObserver.observe(title);
+});
+
+  (card => {
+    card.classList.add('fade-in');
+    observer.observe(card);
+  });
+</script>
+
+
+</body>
+</html>
